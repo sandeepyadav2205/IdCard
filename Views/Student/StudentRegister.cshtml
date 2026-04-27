@@ -1,0 +1,61 @@
+﻿@model IcardProject.Models.Student
+@{
+    Layout = "_Student";
+}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-lg" style="border-radius: 20px;">
+                <div class="card-body p-5">
+                    <h3 class="fw-bold mb-4 text-center" style="color: #2C3E50;">Student Registration</h3>
+                    
+                    <form asp-action="StudentRegister" method="post" enctype="multipart/form-data">
+                        
+                        <div class="text-center mb-4">
+                            <label for="profileUpload" class="form-label d-block small text-muted text-uppercase fw-bold">Profile Photo</label>
+                            <div class="position-relative d-inline-block">
+                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 100px; height: 100px; border: 2px dashed #cbd5e0;">
+                                    <i class="bi bi-camera text-muted fs-2"></i>
+                                </div>
+                                <input type="file" id="profileUpload" name="ProfilePhoto" class="form-control form-control-sm position-absolute top-0 start-0 opacity-0 h-100 w-100" style="cursor: pointer;">
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold">Full Name</label>
+                                <input type="text" asp-for="Name" class="form-control form-control-lg bg-light border-0" placeholder="e.g. John Doe" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold">Email Address</label>
+                                <input type="email" asp-for="Email" class="form-control form-control-lg bg-light border-0" placeholder="name@university.edu" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold">Mobile Number</label>
+                                <input type="tel" asp-for="Mobile" class="form-control form-control-lg bg-light border-0" placeholder="+1 (555) 000-0000" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold">Password</label>
+                                <input type="password" asp-for="Password" class="form-control form-control-lg bg-light border-0" placeholder="••••••••" required>
+                                <div class="form-text text-end" style="font-size: 0.75rem;">Minimum 8 characters</div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-dark btn-lg w-100 shadow-sm" style="border-radius: 12px; background-color: #2C3E50;">
+                                    Create Student Account
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <p class="text-center mt-4 text-muted small">By registering, you agree to the institution's terms of service.</p>
+        </div>
+    </div>
+</div>

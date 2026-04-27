@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_Student";
+}
+<h2>Recycle Bin</h2>
+
+@model IEnumerable<IcardProject.Models.Student>
+@{
+    Layout = "_Student";
+}
+
+
+<table class="table-bordered  table-hover table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Password</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+
+            <td>@student.Name</td>
+            <td>@student.Email</td>
+            <td>@student.Mobile</td>
+            <td>@student.Password</td>
+            <td><img src="~/Images/@student.ProfilePicture" alt="Profile Image" style="width: 100px; height: auto;" /></td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@student.Id" class="btn btn-danger">Delete Permanently</a>
+                <a asp-action="Restore" asp-route-id="@student.Id" class="btn btn-warning">Restore</a>
+            </td>
+        </tr>
+    }
+ 
+</table>

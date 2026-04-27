@@ -1,0 +1,29 @@
+﻿@model IcardProject.Models.Student
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form asp-action="Edit" method="Post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <input type="text" asp-for="Name" class="form-control" placeholder="Name" />
+    <br />
+    <br />
+    <input type="email" asp-for="Email" class="form-control" placeholder="Email" />
+    <br />
+    <br />
+    <img src="~/Images/@Model.ProfilePicture" alt="Profile Picture" style="height: 100px; width:100px" />
+    <input type="file" name="ProfilePicture" class="form-control" accept=".jpg,.png, .jpeg" />
+    <br />
+    <br />
+    <input type="tel" asp-for="Mobile" class="form-control" placeholder="Mobile" />
+    <br />
+    <br />
+    <input type="text" asp-for="Password" class="form-control" placeholder="Password" />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

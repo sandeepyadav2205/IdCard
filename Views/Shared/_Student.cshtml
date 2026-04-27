@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="d-flex justify-content-evenly py-4 px-5 bg-dark text-white">
+        <a asp-action="Index">Home</a>
+        <a asp-action="StudentRegister">Register</a>
+        <a asp-action="ShowStudents">Show Students</a>
+        <a asp-action="RecycleBin">Recycle Bin</a>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

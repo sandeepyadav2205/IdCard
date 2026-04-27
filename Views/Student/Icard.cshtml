@@ -1,0 +1,67 @@
+﻿@model IcardProject.Models.Student  
+
+@{
+    Layout = "_Student";
+}    
+
+<style>
+        .icard {
+            width: 350px;
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .icard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gradient-custom {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 80px;
+        }
+    </style>
+
+    <div class="card icard shadow-sm m-5">
+        <div class="gradient-custom w-100"></div>
+        
+        <div class="card-body text-center mt-n5">
+            <img src="~/Images/@Model.ProfilePicture" 
+                 alt="Profile" 
+                 class="rounded-circle profile-img mb-3" 
+                 style="margin-top: -50px; position: relative;">
+            
+            <h4 class="fw-bold mb-1">@Model.Name</h4>
+      
+            
+            <hr class="my-4">
+            
+            <div class="text-start px-3">
+                <div class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-envelope-fill text-primary me-3"></i>
+                    <div>
+                        <small class="text-muted d-block">Email</small>
+                        <span class="fw-semibold">@Model.Email</span>
+                    </div>
+                </div>
+                
+                <div class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-telephone-fill text-success me-3"></i>
+                    <div>
+                        <small class="text-muted d-block">Mobile</small>
+                        <span class="fw-semibold">@Model.Mobile</span>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+

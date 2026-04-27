@@ -1,0 +1,36 @@
+﻿@model IEnumerable<IcardProject.Models.Student>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Student";
+}
+
+
+<table class="table-bordered  table-hover table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Password</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+
+            <td>@student.Name</td>
+            <td>@student.Email</td>
+            <td>@student.Mobile</td>
+            <td>@student.Password</td>
+            <td><img src="~/Images/@student.ProfilePicture" alt="Profile Image" style="width: 100px; height: auto;" /></td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@student.Id" class="btn btn-primary">Edit</a>
+                <a asp-action="SendInRecycle" asp-route-id="@student.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Icard" asp-route-id="@student.Id" class="btn btn-success">Print ICard</a>
+            </td>
+        </tr>
+    }
+ 
+</table>
